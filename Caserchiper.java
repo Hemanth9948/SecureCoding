@@ -27,11 +27,26 @@ public class Caserchiper{
     }
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
+        int x=0;int y=0;
         System.out.println("Enter the Input String :");
         String s= sc.nextLine();
         System.out.println("Enter the Value of the Shift :");
         int i= Integer.valueOf(sc.nextLine());
         System.out.println("Encrypt String -->"+Encrypt(s,i));
-        System.out.println("Decrypt String -->"+Decrypt(Encrypt(s,i),i));
+        System.out.println("Decryption Analysis :");
+        while(s!=Decrypt(Encrypt(s,i),x) && x<26){
+          if(x<10){
+            System.out.println("   ."+x+"  ------> "+"Decrypt String : "+Decrypt(Encrypt(s,i),x));
+          }
+          else{
+            System.out.println("   ."+x+" ------> "+"Decrypt String : "+Decrypt(Encrypt(s,i),x));
+          }
+          if(s.equals(Decrypt(Encrypt(s,i),x))){
+            y=x;
+          }
+          x=x+1;
+        }
+        System.out.println("Key Value :" +y);
+        System.out.println("Original String -->"+Decrypt(Encrypt(s,i),y));
     }
 }
