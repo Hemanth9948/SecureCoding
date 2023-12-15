@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Sc{
+public class Caserchiper{
     public static final String alpha="abcdefghijklmnopqrstuvwxyz";
     public  static String Encrypt(String s,int shift){
         String en="";
